@@ -1,0 +1,17 @@
+.gitignore
+
+*.idea/
+
+.htaccess
+web.config
+/bitrix/
+/upload/
+
+*.css.map
+
+package.json
+Gruntfile.js
+*node_modules/
+
+README.md
+*~
