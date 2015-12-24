@@ -1,0 +1,191 @@
+// get mixins and variables
+@import "mixins/mixins";
+@import "variables";
+
+.header {
+
+  &-top {
+    padding: 20px 0;
+
+    &-contacts {
+      float: right;
+
+      @media screen {
+
+        @media (min-width: 768px) and (max-width: 991px) {
+          margin: 0 0 10px;
+        }
+      }
+
+      &__top {
+        padding: 0 0 2px;
+      }
+
+      &__link {
+        text-decoration: none;
+        border-bottom: 1px dashed $color-font-link;
+        margin: 6px 0 0 0;
+        color: $color-font-link;
+
+        &:visited,
+        &:focus {
+          text-decoration: none;
+          border-bottom: 1px dashed $color-font-link;
+          margin: 6px 0 0 0;
+          color: $color-font-link;
+        }
+
+        &:hover,
+        &:active {
+          color: $color-font-link;
+          text-decoration: none;
+          border: none;
+        }
+      }
+
+      &__phone {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0 10px 0 0;
+      }
+    }
+
+    &-personal {
+      text-align: right;
+
+      @media screen {
+
+        @media (min-width: 768px) and (max-width: 991px) {
+          text-align: left;
+        }
+      }
+
+      &-auth {
+        margin: 0 0 10px;
+
+        &__link {
+          padding: 0 20px 0 0;
+          position: relative;
+          @include link-style-invert($color-font-default);
+
+          &:before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            right: 0;
+            background-image: url( $directory-image-base + 'corner-down.png' );
+            @include background-image-style();
+            width: 14px;
+            height: 8px;
+          }
+        }
+
+        &__form {
+          width: 400px;
+          text-align: left;
+        }
+      }
+      &-modal {
+        background-color: $color-popup-bg;
+      }
+
+      &-popup {
+        padding: 0 15px;
+
+        &__title {
+          position: relative;
+          display: inline-block;
+          margin: 15px 0 20px;
+
+          &.auth {
+
+            &:before {
+              content: '';
+              position: absolute;
+              width: 22px;
+              height: 33px;
+              top: 0;
+              right: -30px;
+              background-image: url('#{$directory-image-base}keys.png');
+            }
+          }
+        }
+
+        &__field {
+          margin: 0 0 15px;
+        }
+
+        &__name {
+          display: block;
+          width: 100%;
+          font-weight: normal;
+          margin: 0 0 6px;
+        }
+
+        &__text {
+          width: 100%;
+          text-align: left;
+          padding: 5px 10px;
+          border: 1px solid $color-border-first;
+          background: $color-body-bg;
+        }
+
+        &__button {
+          @include link-style($color-font-link);
+          margin: 0 20px;
+        }
+
+        &__forgot {
+          display: block;
+          margin: 0 0 15px;
+          @include link-style($color-font-link);
+        }
+      }
+
+      &-basket {
+
+        &__link {
+          font-weight: bold;
+          position: relative;
+          padding: 0 0 0 40px;
+          @include link-style-invert($color-font-default);
+
+          &:before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 0;
+            background-image: url( $directory-image-base + 'basket.png' );
+            @include background-image-style();
+            width: 27px;
+            height: 25px;
+          }
+        }
+
+        &__count {
+          margin: 0 0 0 10px;
+          padding: 5px 10px;
+          border: 2px solid $color-font-default;
+          font-weight: bold;
+          text-decoration: none;
+          color: $color-font-default;
+          @include border-radius(20px);
+
+          &:hover,
+          &:active,
+          &:visited,
+          &:focus {
+            color: $color-font-default;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  &-feedback {
+    width: 270px;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}

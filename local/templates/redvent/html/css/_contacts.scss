@@ -1,0 +1,71 @@
+// get mixins and variables
+@import "mixins/mixins";
+@import "variables";
+
+.contacts {
+
+  &__block {
+    margin: 0 0 30px;
+  }
+
+  &-field {
+    font-size: 20px;
+
+    &__name {
+      font-weight: bold;
+    }
+
+    &__link {
+      @include link-style($color-font-default);
+    }
+  }
+
+  &-item {
+    margin: 0 0 30px;
+
+    &-title {
+      font-weight: bold;
+      font-size: 20px;
+    }
+  }
+
+  &-feedback {
+    background-color: $color-third;
+    padding: 30px 20px;
+    margin: 0 0 30px;
+
+    .form-field__text {
+      @include border-radius(0);
+    }
+
+    &__title {
+      font-size: 25px;
+      padding: 0 0 0 65px;
+      margin: 0 0 25px;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 15px;
+        background-image: url( $directory-image-base + 'icon-contacts-feedback.png' );
+        @include background-image-style();
+        width: 38px;
+        height: 34px;
+      }
+    }
+
+    &__textarea {
+      min-height: 100px;
+    }
+
+    &__descr {
+      padding: 18px 0 0 15px;
+    }
+
+    &__button {
+      width: 100%;
+    }
+  }
+}

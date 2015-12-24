@@ -1,0 +1,316 @@
+// get mixins and variables
+@import "mixins/mixins";
+@import "variables";
+
+.catalog {
+
+  &-sections {
+    margin: 0 0 30px;
+
+    &__title {
+      text-align: center;
+    }
+
+    &__list {
+      margin: 0 0 30px;
+    }
+
+    &-item {
+      margin: 0 0 30px;
+
+      &__img {
+        margin: 0 auto 10px;
+      }
+
+      &__link {
+        @include link-style($color-font-link);
+
+        @media screen {
+
+          @media (max-width: 767px) {
+            display: block;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  &-section {
+    margin: 0 0 30px;
+
+    &__list {
+      margin-bottom: 30px;
+    }
+
+    &-item {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 10% 30px 0;
+
+      @media screen {
+
+        @media (max-width: 767px) {
+          max-width: 100%;
+        }
+      }
+
+      &-img_cont {
+        width: 33%;
+        float: left;
+      }
+
+      &-text_cont {
+        width: 67%;
+        float: left;
+      }
+
+      &__img {
+        margin: 0 20px 20px 0;
+      }
+
+      &__link {
+        @include link-style($color-font-link);
+      }
+    }
+
+    &__descr {
+      padding: 0 0 0 100px;
+      margin: 0 0 30px;
+      position: relative;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 61px;
+        height: 68px;
+        top: 0;
+        left: 15px;
+        background-image: url( $directory-image-base + 'catalog-section-descr.png' );
+        @include background-image-style();
+      }
+    }
+  }
+
+  &-detail {
+
+    &-info {
+      padding: 0 0 0 70px;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 47px;
+        height: 47px;
+        background-image: url('#{$directory-image-base}rule.png');
+        @include background-image-style();
+      }
+    }
+
+    &-block {
+
+      &-item {
+        margin: 0 0 30px;
+
+        &-title {
+          font-size: 18px;
+        }
+      }
+
+      &-descr {
+        margin: 0 0 30px;
+
+        &__item {
+          padding: 0 0 0 70px;
+          position: relative;
+
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            @include background-image-style();
+          }
+
+          &.construction {
+
+            &:before {
+              background-image: url("#{$directory-image-base}detail-construction.png");
+            }
+          }
+
+          &.coating {
+
+            &:before {
+              background-image: url("#{$directory-image-base}detail-coating.png");
+              height: 70px;
+            }
+          }
+
+          &.size {
+
+            &:before {
+              background-image: url("#{$directory-image-base}detail-size.png");
+              height: 49px;
+            }
+          }
+
+          &.installation {
+
+            &:before {
+              background-image: url("#{$directory-image-base}detail-installation.png");
+              height: 49px;
+            }
+          }
+        }
+      }
+    }
+
+    &-similar {
+      margin: 0 0 40px;
+
+      &-title {
+        text-align: center;
+        margin: 0 0 30px;
+      }
+    }
+
+    &-calc {
+      width: 100%;
+      border: 6px solid $color-border-first;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      font-size: 15px;
+
+      &-title {
+        font-size: 15px;
+        font-weight: bold;
+        color: $color-first;
+        text-transform: uppercase;
+        margin: 0 0 20px;
+      }
+
+      &-block {
+        position: relative;
+        padding-bottom: 6px;
+        margin: 0 0 15px;
+
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 6px;
+          width: 100%;
+          background-image: url("#{$directory-image-base}detail-calc-delimiter.png");
+          background-position: center;
+          background-size: contain;
+          background-repeat: repeat-x;
+        }
+
+        &-bottom {
+          font-size: 14px;
+
+          &__title {
+            color: $color-font-disabled;
+            text-transform: uppercase;
+            margin: 0 0 20px;
+          }
+
+          &__field {
+            padding: 0 0 3px;
+            margin: 0 0 15px;
+            border-bottom: 1px solid $color-border-first;
+            position: relative;
+          }
+
+          &__name {
+            max-width: 55%;
+            font-weight: normal;
+            float: left;
+          }
+
+          &__val {
+            max-width: 45%;
+            width: 66px;
+            float: right;
+          }
+        }
+      }
+
+      &-field {
+        margin: 0 0 15px;
+        position: relative;
+
+        &__name {
+          width: 45%;
+          font-weight: normal;
+        }
+
+        &__val {
+          width: 66px;
+        }
+
+        &__button {
+          width: 100%;
+        }
+      }
+
+      &__link {
+        text-decoration: none;
+        border-bottom: 1px dashed $color-font-link;
+
+        &:hover,
+        &:active {
+          text-decoration: none;
+          border: none;
+        }
+      }
+
+      &-price {
+
+        &__name {
+          float: left;
+          font-size: 20px;
+          font-weight: bold;
+          max-width: 50%;
+        }
+
+        &__val {
+          float: right;
+          font-size: 26px;
+          max-width: 50%;
+        }
+
+        &-sale {
+
+          &__name {
+            float: left;
+            font-size: 16px;
+            max-width: 50%;
+          }
+
+          &__val {
+            float: right;
+            font-size: 20px;
+            max-width: 50%;
+          }
+        }
+      }
+    }
+  }
+
+  &-delimiter {
+    width: 100%;
+    height: 100px;
+    margin: -100px 0 30px;
+    background-image: url("#{$directory-image-base}delimiter-catalog-section.png");
+    @include background-image-style-cover();
+  }
+}

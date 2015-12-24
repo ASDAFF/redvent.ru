@@ -1,0 +1,55 @@
+// get mixins and variables
+@import "mixins/mixins";
+@import "variables";
+
+.button {
+  font-weight: bold;
+  padding: 10px 20px;
+  text-align: center;
+  outline: none;
+  @include border-radius(3px);
+
+  &-first {
+    color: $color-font-second;
+    background-color: $color-first;
+    border-bottom: 2px solid $color-first-dark;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:visited,
+    &:focus {
+      color: $color-font-second;
+      text-decoration: none;
+    }
+  }
+
+  &-second {
+    color: $color-font-second;
+    background-color: $color-fourth;
+    border-bottom: 2px solid $color-fourth-dark;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+
+    &:hover,
+    &:active,
+    &:visited,
+    &:focus {
+      color: $color-font-second;
+      text-decoration: none;
+    }
+  }
+
+  &-text {
+    text-align: left;
+    width: 100%;
+    padding: 5px 10px;
+    border: 1px solid $color-border-first;
+    background: $color-body-bg;
+    @include border-radius(3px);
+  }
+}

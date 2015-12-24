@@ -1,0 +1,85 @@
+// get mixins and variables
+@import "mixins/mixins";
+@import "variables";
+
+.footer {
+
+  &-top {
+    background-image: url( $directory-image-base + 'footer-top-bg.png');
+    background-size: contain;
+    background-repeat: repeat-x;
+    width: 100%;
+    height: 6px;
+  }
+
+  &-body {
+    background: $color-second;
+    color: $color-font-second;
+    padding: 20px 0;
+  }
+
+  &-menu {
+    width: 100%;
+    margin: 0 0 35px;
+
+    &-list {
+
+      &-item {
+        float: left;
+        margin: 0 20px 0 0;
+
+        &__link {
+          @include link-style($color-font-second)
+        }
+      }
+    }
+  }
+
+  &-copyright {
+
+    @media screen {
+
+      @media (max-width: 991px) {
+        margin: 0 0 30px;
+      }
+    }
+  }
+
+  &-contacts {
+    color: $color-font-second;
+
+    &-field {
+      padding: 0 0 0 40px;
+      margin: 0 0 15px;
+      position: relative;
+      font-size: 15px;
+
+      &.time {
+
+        &:before {
+          background-image: url( $directory-image-base + 'time-red.png' );
+        }
+      }
+
+      &.phone {
+
+        &:before {
+          background-image: url( $directory-image-base + 'phone-red.png' );
+        }
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include background-image-style();
+        @include square(30px);
+      }
+
+      &__link {
+        @include link-style($color-font-second)
+      }
+    }
+  }
+}

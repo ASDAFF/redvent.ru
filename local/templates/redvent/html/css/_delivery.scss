@@ -1,0 +1,138 @@
+// get mixins and variables
+@import "mixins/mixins";
+@import "variables";
+
+.delivery {
+
+  &-item {
+    padding: 0 0 0 150px;
+    margin: 0 0 40px;
+    position: relative;
+
+    @media screen {
+
+      @media (max-width: 767px) {
+        padding: 0 0 0 25%;
+      }
+    }
+
+    &:before {
+      content: '';
+      top: 0;
+      left: 15px;
+      position: absolute;
+      width: 107px;
+      @include background-image-style;
+
+      @media screen {
+
+        @media (max-width: 767px) {
+          left: 2%;
+          max-width: 20%;
+        }
+      }
+    }
+
+    &.first {
+
+      &:before {
+        height: 101px;
+        background-image: url("#{$directory-image-base}delivery-first.png");
+      }
+    }
+
+    &.second {
+
+      &:before {
+        height: 81px;
+        background-image: url("#{$directory-image-base}delivery-second.png");
+      }
+    }
+
+    &.third {
+
+      &:before {
+        height: 101px;
+        background-image: url("#{$directory-image-base}delivery-third.png");
+      }
+    }
+
+    &.fourth {
+
+      &:before {
+        height: 101px;
+        background-image: url("#{$directory-image-base}delivery-fourth.png");
+      }
+    }
+
+    &__email {
+      font-weight: bold;
+      @include link-style($color-font-default);
+    }
+
+    &__link {
+      @include link-style($color-font-link);
+    }
+
+    &__phone {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    &__title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    &__delivery {
+      padding: 0 0 0 95px;
+      margin: 20px 0 5px;
+      font-size: 14px;
+      position: relative;
+
+      @media screen {
+
+        @media (max-width: 767px) {
+          padding: 0 0 0 25%;
+        }
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 7px;
+        left: 0;
+        width: 78px;
+        height: 37px;
+        background-image: url("#{$directory-image-base}deliv-car.png");
+        @include background-image-style;
+
+        @media screen {
+
+          @media (max-width: 767px) {
+            max-width: 20%;
+          }
+        }
+      }
+    }
+
+    &-list {
+
+      &-item {
+        padding: 0 0 0 20px;
+        margin: 0 0 5px;
+        position: relative;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 9px;
+          left: 0;
+          width: 13px;
+          height: 1px;
+          background-color: $color-font-default;
+        }
+      }
+    }
+  }
+}

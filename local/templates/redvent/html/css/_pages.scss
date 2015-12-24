@@ -1,0 +1,200 @@
+// get mixins and variables
+@import "mixins/mixins";
+@import "variables";
+
+.pages {
+
+  &-title {
+    text-align: center;
+
+    &-first {
+      position: relative;
+      margin: 20px 0 0;
+      display: inline-block;
+
+      &__right {
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 15px;
+          right: -148px;
+          background-image: url( $directory-image-base + 'delimiter-title.png' );
+          @include background-image-style();
+          width: 134px;
+          height: 4px;
+        }
+      }
+
+      &__left {
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 15px;
+          left: -148px;
+          background-image: url( $directory-image-base + 'delimiter-title2.png' );
+          @include background-image-style();
+          width: 134px;
+          height: 4px;
+        }
+      }
+
+      &__text {
+        font-size: 25px;
+        margin: 0 0 15px;
+
+        h2 {
+          margin: 0;
+        }
+      }
+    }
+
+    &__descr {
+      text-transform: uppercase;
+      margin: 0 0 30px;
+      letter-spacing: 2px;
+      font-size: 13px;
+    }
+
+    &__second {
+      position: relative;
+      margin: 0 0 60px;
+
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: -25px;
+        left: 0;
+        background-image: url( $directory-image-base + 'delimiter-title.png' );
+        @include background-image-style();
+        width: 134px;
+        height: 4px;
+      }
+    }
+  }
+
+  &-advantages {
+    margin: 0 0 30px;
+
+    &-list {
+      margin: 0 0 30px;
+
+      &__text {
+        margin: 30px 0 0;
+      }
+    }
+  }
+
+  &-form {
+    background: $color-third;
+    padding: 5px 0 30px;
+    margin: 0 0 30px;
+    @include box-shadow(0px, 4px, 3px, -2px, $color-border-first);
+
+     &-title {
+       font-size: 16px;
+       position: relative;
+       text-transform: uppercase;
+
+       &.feedback {
+         padding: 35px 0 0 70px;
+
+         &:before {
+           content: '';
+           position: absolute;
+           bottom: 0;
+           left: 0;
+           background-image: url( $directory-image-base + 'main-form-phone.png' );
+           @include background-image-style();
+           width: 58px;
+           height: 63px;
+         }
+       }
+     }
+
+    &-field {
+      margin: 18px auto;
+      text-align: center;
+      width: 100%;
+      padding: 0 10%;
+
+      &-text {
+        text-align: left;
+        width: 100%;
+        padding: 5px 10px;
+        border: 1px solid $color-border-first;
+        background: $color-body-bg;
+        @include border-radius(3px);
+      }
+
+      &-button {
+        font-weight: bold;
+        color: $color-font-second;
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+        background-color: $color-first;
+        border-bottom: 2px solid $color-first-dark;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        outline: none;
+        margin: -2px 0 0;
+        @include border-radius(3px);
+
+        //&:active {
+        //  border-bottom: none;
+        //  margin: 0;
+        //}
+      }
+    }
+
+    &__descr {
+      text-align: left;
+    }
+  }
+
+  &-conditions {
+    width: 100%;
+    padding: 0 10% 30px;
+    border: 1px solid $color-border-first;
+    @include border-radius(3px);
+
+    &-title {
+      padding: 30px 0 15px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    &-list {
+      margin: 0 0 15px;
+      padding: 0;
+
+      &__item {
+        position: relative;
+        padding: 0 0 0 32px;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-image: url( $directory-image-base + 'check-red.png' );
+          @include background-image-style();
+          width: 18px;
+          height: 16px;
+        }
+      }
+    }
+
+    &__descr {
+      margin: 0 0 15px;
+    }
+
+    &__link {
+      font-weight: bold;
+      @include link-style($color-font-link);
+    }
+  }
+}

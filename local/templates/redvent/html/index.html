@@ -1,0 +1,603 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="plugins/owl.carousel/assets/owl.carousel.css">
+    <link rel="stylesheet" href="plugins/lightbox/ekko-lightbox.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Redvent.ru</title>
+</head>
+<body>
+<header>
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                    <a href="index.html">
+                        <img class="img-responsive centered" src="img/logo-top.png" alt="Redvent.ru">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-4 hidden-xs">
+                    <p>Изготовление и продажа жалюзийных решеток с доставкой по всей России</p>
+                </div>
+                <div class="col-lg-4 col-md-3 col-sm-4 col-xs-6">
+                    <div class="header-top-contacts">
+                        <div class="header-top-contacts__top">
+                            <span class="header-top-contacts__phone">
+                                8(495)795-23-04
+                            </span>
+                            <a class="header-top-contacts__link" id="need_feedback" href="#" rel="popover" data-toggle="popover" data-placement="bottom">
+                                Обратный звонок
+                            </a>
+                            <div id="need_feedback_content" style="display: none;">
+                                <div class="header-feedback">
+                                    <h3>Обратный звонок</h3>
+                                    <p>
+                                        Укажите ваш номер телефона и имя. Мы перезвоним вам через 15 минут.
+                                    </p>
+                                    <form class="form" action="/">
+                                        <div class="form-field-line">
+                                            <label class="form-field-line__name">
+                                                Ваше имя*
+                                            </label>
+                                            <input class="form-field-line__text form-field__text" type="text">
+                                        </div>
+                                        <div class="form-field-line">
+                                            <label class="form-field-line__name">
+                                                Телефон*
+                                            </label>
+                                            <input class="form-field-line__text form-field__text" type="text">
+                                        </div>
+                                        <div class="form-field-line">
+                                            <input class="button button-first" type="submit" value="Я жду звонка">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header-top-contacts__bottom">
+                            Пн-Пт с 9.00 до 18.00<br>(прием заявок круглосуточно)
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-8 col-xs-6 col-xs-offset-0">
+                    <div class="header-top-personal" data-feedback-content='popover'>
+                        <div class="header-top-personal-auth">
+                            <a class="header-top-personal-auth__link" href="#auth_register" data-toggle="modal" data-target="#auth_register">Вход и регистрация</a>
+                        </div>
+                        <div class="modal fade"  role="dialog" tabindex="-1" aria-hidden="true"  id="auth_register" style="display: none;">
+                            <div class="modal-dialog header-top-personal-auth__form">
+                                <div class="modal-content">
+                                    <div class="modal-body tab-content header-top-personal-modal">
+                                        <div class="tab-pane header-top-personal-popup active" id="auth_form">
+                                            <h3 class="header-top-personal-popup__title auth">Войти</h3>
+                                            <form class="form" action="/">
+                                                <div class="header-top-personal-popup__field">
+                                                    <label class="header-top-personal-popup__name">
+                                                        Электронная почта
+                                                    </label>
+                                                    <input class="header-top-personal-popup__text" type="text">
+                                                </div>
+                                                <div class="header-top-personal-popup__field">
+                                                    <label class="header-top-personal-popup__name">
+                                                        Пароль
+                                                    </label>
+                                                    <input class="header-top-personal-popup__text" type="text">
+                                                </div>
+                                                <a class="header-top-personal-popup__forgot" href="/">Забыли пароль?</a>
+                                                <div class="header-top-personal-popup__field">
+                                                    <input class="button button-first" type="submit" value="Войти">
+                                                    <a class="header-top-personal-popup__button active" href="#register_form" data-toggle="tab">Зарегистрироваться</a>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane header-top-personal-popup" id="register_form">
+                                            <h3 class="header-top-personal-popup__title">Регистрация</h3>
+                                            <form class="form" action="/">
+                                                <div class="header-top-personal-popup__field">
+                                                    <label class="header-top-personal-popup__name">
+                                                        Как вас зовут?
+                                                    </label>
+                                                    <input class="header-top-personal-popup__text" type="text">
+                                                </div>
+                                                <div class="header-top-personal-popup__field">
+                                                    <label class="header-top-personal-popup__name">
+                                                        Moбильный телефон
+                                                    </label>
+                                                    <input class="header-top-personal-popup__text" type="text">
+                                                </div>
+                                                <div class="header-top-personal-popup__field">
+                                                    <label class="header-top-personal-popup__name">
+                                                        Электронная почта
+                                                    </label>
+                                                    <input class="header-top-personal-popup__text" type="text">
+                                                </div>
+                                                <div class="header-top-personal-popup__field">
+                                                    <label class="header-top-personal-popup__name">
+                                                        Пароль
+                                                    </label>
+                                                    <input class="header-top-personal-popup__text" type="text">
+                                                </div>
+                                                <div class="header-top-personal-popup__field">
+                                                    <label class="header-top-personal-popup__name">
+                                                        Пароль еще раз
+                                                    </label>
+                                                    <input class="header-top-personal-popup__text" type="text">
+                                                </div>
+                                                <div class="header-top-personal-popup__field">
+                                                    <input class="button button-first" type="submit" value="Зарегистрироваться">
+                                                    <a class="header-top-personal-popup__button" href="#auth_form" data-toggle="tab">Войти</a>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header-top-personal-basket">
+                            <a class="header-top-personal-basket__link" href="card.html">Корзина</a>
+                            <a class="header-top-personal-basket__count" href="card.html">2</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="left-menu">
+                <div class="left-menu-top">
+                    <div class="left-menu-top-button">
+                        <a class="left-menu-top__link" href="catalog-sections.html">Каталог продукции</a>
+                        <a href="#" class="left-menu-top__burger" data-toggle="collapse" data-target=".left-menu-bottom"></a>
+                    </div>
+                </div>
+                <div class="left-menu-bottom collapse in">
+                    <ul class="left-menu-bottom-list">
+                        <li class="left-menu-bottom-list-item">
+                            <a class="left-menu-bottom-list-item__link" href="catalog-section.html">Наружные решетки</a>
+                        </li>
+                        <li class="left-menu-bottom-list-item">
+                            <a class="left-menu-bottom-list-item__link" href="catalog-section.html">Инерционные решетки</a>
+                        </li>
+                        <li class="left-menu-bottom-list-item">
+                            <a class="left-menu-bottom-list-item__link" href="catalog-section.html">Декоративные вентиляционные решетки</a>
+                        </li>
+                        <li class="left-menu-bottom-list-item">
+                            <a class="left-menu-bottom-list-item__link" href="catalog-section.html">Инерционные решетки</a>
+                        </li>
+                        <li class="left-menu-bottom-list-item">
+                            <a class="left-menu-bottom-list-item__link" href="catalog-section.html">Декоративные вентиляционные решетки</a>
+                        </li>
+                        <li class="left-menu-bottom-list-item">
+                            <a class="left-menu-bottom-list-item__link" href="catalog-section.html">Наружные решетки</a>
+                        </li>
+                        <li class="left-menu-bottom-list-item">
+                            <a class="left-menu-bottom-list-item__link" href="catalog-section.html">Декоративные вентиляционные решетки</a>
+                        </li>
+                        <li class="left-menu-bottom-list-item">
+                            <a class="left-menu-bottom-list-item__link" href="catalog-section.html">Наружные решетки</a>
+                        </li>
+                        <li class="left-menu-bottom-list-item">
+                            <a class="left-menu-bottom-list-item__link" href="catalog-section.html">Инерционные решетки</a>
+                        </li>
+                        <li class="left-menu-bottom-list-item">
+                            <a class="left-menu-bottom-list-item__link" href="catalog-section.html">Наружные решетки</a>
+                        </li>
+                        <li class="left-menu-bottom-list-item">
+                            <a class="left-menu-bottom-list-item__link" href="catalog-section.html">Инерционные решетки</a>
+                        </li>
+                        <li class="left-menu-bottom-list-item">
+                            <a class="left-menu-bottom-list-item__link" href="catalog-section.html">Декоративные вентиляционные решетки</a>
+                        </li>
+                        <li class="left-menu-bottom-list-item">
+                            <a class="left-menu-bottom-list-item__link" href="catalog-section.html">Наружные решетки</a>
+                        </li>
+                        <li class="left-menu-bottom-list-item">
+                            <a class="left-menu-bottom-list-item__link" href="catalog-section.html">Декоративные вентиляционные решетки</a>
+                        </li>
+                        <li class="left-menu-bottom-list-item">
+                            <a class="left-menu-bottom-list-item__link" href="catalog-section.html">Наружные решетки</a>
+                        </li>
+                        <li class="left-menu-bottom-list-item">
+                            <a class="left-menu-bottom-list-item__link" href="catalog-section.html">Декоративные вентиляционные решетки</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="left-slider">
+                <div class="left-slider-top">
+                    наше производство
+                </div>
+                <div class="left-slider-body">
+                    <a href="/">
+                        <img class="img-responsive left-slider-item item" src="img/slider-mini.jpg"/>
+                    </a>
+                    <a href="/">
+                        <img class="img-responsive left-slider-item item" src="img/slider-mini.jpg"/>
+                    </a>
+                    <a href="/">
+                        <img class="img-responsive left-slider-item item" src="img/slider-mini.jpg"/>
+                    </a>
+                </div>
+                <div class="left-slider-bottom">
+                    <a class="left-slider-bottom__link" href="/">подробнее о производстве</a>
+                </div>
+            </div>
+            <div class="left-reviews">
+                <div class="left-reviews-title">
+                    Отзывы<br>
+                    клиентов
+                </div>
+                <div class="left-reviews-block">
+                    <div class="col-lg-12 col-md-12 col-sm-6 col-xs-6 left-reviews-block-item">
+                        <a class="left-reviews-block-item__link" href="img/reviev.png" data-toggle="lightbox" data-gallery="reviews-gallery" data-title="Александр Спиридонов">
+                            <img class="img-responsive left-reviews-block-item__img" src="img/reviev.png" alt="">
+                            <span class="left-reviews-block-item__name">Александр Спиридонов</span>
+                        </a>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-6 col-xs-6 left-reviews-block-item">
+                        <a class="left-reviews-block-item__link" href="img/reviev.png" data-toggle="lightbox" data-gallery="reviews-gallery" data-title="Александр Спиридонов">
+                            <img class="img-responsive left-reviews-block-item__img" src="img/reviev.png" alt="">
+                            <span class="left-reviews-block-item__name">Александр Спиридонов</span>
+                        </a>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <div class="left-reviews-bottom">
+                        <a class="left-reviews-bottom__link" href="/">Все отзывы</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+            <div class="main-nav">
+                <ul class="main-nav-list">
+                    <li class="main-nav-list-item">
+                        <a class="main-nav-list-item__link" href="catalog-sections.html">
+                            Каталог решеток
+                        </a>
+                    </li>
+                    <li class="main-nav-list-item">
+                        <a class="main-nav-list-item__link" href="production.html">
+                            Производство
+                        </a>
+                    </li>
+                    <li class="main-nav-list-item">
+                        <a class="main-nav-list-item__link" href="delivery.html">
+                            Оплата и доставка
+                        </a>
+                    </li>
+                    <li class="main-nav-list-item">
+                        <a class="main-nav-list-item__link" href="actions.html">
+                            Наши акции
+                        </a>
+                    </li>
+                    <li class="main-nav-list-item">
+                        <a class="main-nav-list-item__link" href="price.html">
+                            Цены online
+                        </a>
+                    </li>
+                    <li class="main-nav-list-item">
+                        <a class="main-nav-list-item__link" href="contacts.html">
+                            Контактная информация
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="main-slider owl-carousel">
+                <div class="main-slider-item item" style="background-image: url('img/main-slider.png')">
+                    <div class="main-slider-item__descr">
+                        <p class="main-slider-item__text">
+                            Доставка по всей России<br>
+                            бесплатно, при заказе<br>
+                            <b>от 500000 руб.</b>
+                        </p>
+                    </div>
+                    <a class="main-slider-item__link" href="/">Подробнее</a>
+                </div>
+                <div class="main-slider-item item" style="background-image: url('img/main-slider.png')">
+                    <div class="main-slider-item__descr">
+                        <p class="main-slider-item__text">
+                            Доставка по всей России<br>
+                            бесплатно, при заказе<br>
+                            <b>от 500000 руб.</b>
+                        </p>
+                    </div>
+                    <a class="main-slider-item__link" href="/">Подробнее</a>
+                </div>
+                <div class="main-slider-item item" style="background-image: url('img/main-slider.png')">
+                    <div class="main-slider-item__descr">
+                        <p class="main-slider-item__text">
+                            Доставка по всей России<br>
+                            бесплатно, при заказе<br>
+                            <b>от 500000 руб.</b>
+                        </p>
+                    </div>
+                    <a class="main-slider-item__link" href="/">Подробнее</a>
+                </div>
+            </div>
+            <div class="main-products">
+                <ul class="main-products-tabs">
+                    <li class="main-products-tabs-item active">
+                        <a class="main-products-tabs-item__link" href="#prod-best"  data-toggle="tab">Лучшие предложения</a>
+                    </li>
+                    <li class="main-products-tabs-item">
+                        <a class="main-products-tabs-item__link" href="#prod-new"  data-toggle="tab">Новинки</a>
+                    </li>
+                </ul>
+                <div class="main-products-items container-fluid active" id="prod-best">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 main-products-items-cont">
+                            <div class="main-products-items__item">
+                                <a href="catalog-detail.html">
+                                    <img class="img-responsive main-products-items__img" src="img/main-products-item1.png" alt="">
+                                </a>
+                                <a class="main-products-items__link" href="catalog-detail.html">Вентилляционная наружная решетка ВНТ</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 main-products-items-cont">
+                            <div class="main-products-items__item">
+                                <a href="catalog-detail.html">
+                                    <img class="img-responsive main-products-items__img" src="img/main-products-item2.png" alt="">
+                                </a>
+                                <a class="main-products-items__link" href="catalog-detail.html">Вентилляционная наружная решетка ВНТ</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 main-products-items-cont">
+                            <div class="main-products-items__item">
+                                <a href="catalog-detail.html">
+                                    <img class="img-responsive main-products-items__img" src="img/main-products-item3.png" alt="">
+                                </a>
+                                <a class="main-products-items__link" href="catalog-detail.html">Вентилляционная наружная решетка ВНТ</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 main-products-items-cont last">
+                            <div class="main-products-items__item">
+                                <a href="catalog-detail.html">
+                                    <img class="img-responsive main-products-items__img" src="img/main-products-item4.png" alt="">
+                                </a>
+                                <a class="main-products-items__link" href="catalog-detail.html">Вентилляционная наружная решетка ВНТ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-products-items container-fluid" id="prod-new">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 main-products-items-cont">
+                            <div class="main-products-items__item">
+                                <a href="catalog-detail.html">
+                                    <img class="img-responsive main-products-items__img" src="img/main-products-item3.png" alt="">
+                                </a>
+                                <a class="main-products-items__link" href="catalog-detail.html">Вентилляционная наружная решетка ВНТ</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 main-products-items-cont">
+                            <div class="main-products-items__item">
+                                <a href="catalog-detail.html">
+                                    <img class="img-responsive main-products-items__img" src="img/main-products-item2.png" alt="">
+                                </a>
+                                <a class="main-products-items__link" href="catalog-detail.html">Вентилляционная наружная решетка ВНТ</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 main-products-items-cont">
+                            <div class="main-products-items__item">
+                                <a href="catalog-detail.html">
+                                    <img class="img-responsive main-products-items__img" src="img/main-products-item4.png" alt="">
+                                </a>
+                                <a class="main-products-items__link" href="catalog-detail.html">Вентилляционная наружная решетка ВНТ</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 main-products-items-cont last">
+                            <div class="main-products-items__item">
+                                <a href="catalog-detail.html">
+                                    <img class="img-responsive main-products-items__img" src="img/main-products-item1.png" alt="">
+                                </a>
+                                <a class="main-products-items__link" href="catalog-detail.html">Вентилляционная наружная решетка ВНТ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 main-advantages">
+                    <h2 class="main-advantages__title">
+                        Для чего заказывать вентилляционную<br>
+                        решетку произведенную нами?
+                    </h2>
+                    <div class="row main-advantages-list">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <img class="img-responsive" src="img/advantage1.png" alt="">
+                            <p class="main-advantages-list__text">Получите два предложения на решетки разных классов и узнаете <b>как сэкономить на грамотном выборе решеток</b></p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <img class="img-responsive" src="img/advantage2.png" alt="">
+                            <p class="main-advantages-list__text">Получите два предложения на решетки разных классов и узнаете <b>как сэкономить на грамотном выборе решеток</b></p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <img class="img-responsive" src="img/advantage3.png" alt="">
+                            <p class="main-advantages-list__text">Получите два предложения на решетки разных классов и узнаете <b>как сэкономить на грамотном выборе решеток</b></p>
+                        </div>
+                    </div>
+                    <h2 class="pages-title__second">
+                        Производство вентилляционных решеток<br>
+                        в России
+                    </h2>
+                    <p>
+                        Значимость этих проблем настолько очевидна,
+                        что постоянный количественный рост и сфера нашей
+                        активности в значительной степени обуславливает
+                        создание системы обучения кадров, соответствует
+                        насущным потребностям. Идейные соображения высшего
+                        порядка, а также укрепление и развитие структуры
+                        влечет за собой процесс внедрения и модернизации
+                        направлений прогрессивного развития. Идейные
+                        соображения высшего порядка, а также рамки и место
+                        обучения кадров способствует подготовки и реализации
+                        направлений прогрессивного развития. Значимость
+                        этих проблем настолько очевидна, что реализация
+                        намеченных плановых заданий обеспечивает широкому
+                        кругу (специалистов) участие в формировании форм
+                        развития.
+                    </p>
+                    <div style="margin: 20px 0;">
+                        <div style="float: right; width: 40%; margin: 0 0 0 10px; padding: 12px 15px;"  class="text-dashed">
+                            <b>Компания производит решетки 27 видов любого размера.</b>
+                        </div>
+                        <p>
+                        <span class="text-big text-red">
+                            REDVENT.RU
+                        </span>
+                            является авторитетным производителем, чьи проекты всегда отличаются безупречным внешним
+                            видом и точным соответствием требованиям заказчика.
+                        </p>
+                    </div>
+                    <p>
+                        Значимость этих проблем настолько очевидна,
+                        что постоянный количественный рост и сфера нашей
+                        активности в значительной степени обуславливает
+                        создание системы обучения кадров, соответствует
+                        насущным потребностям. Идейные соображения высшего
+                        порядка, а также укрепление и развитие структуры
+                        влечет за собой процесс внедрения и модернизации
+                        направлений прогрессивного развития. Идейные
+                        соображения высшего порядка, а также рамки и место
+                        обучения кадров способствует подготовки и реализации
+                        направлений прогрессивного развития.
+                    </p>
+                    <p>
+                        Значимость этих проблем настолько очевидна,
+                        что постоянный количественный рост и сфера нашей
+                        активности в значительной степени обуславливает
+                        создание системы обучения кадров, соответствует
+                        насущным потребностям.
+                    </p>
+
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-block">
+                    <div class="main-form">
+                        <div class="main-form-title feedback">
+                            <b>заказать</b><br>
+                            обратный звонок
+                        </div>
+                        <form action="">
+                            <div class="main-form-field">
+                                <input class="main-form-field-text" type="text" name="NAME" placeholder="Имя*" required>
+                            </div>
+                            <div class="main-form-field">
+                                <input class="main-form-field-text" type="text" name="PHONE" placeholder="Телефон*" required>
+                            </div>
+                            <div class="main-form-field">
+                                <input class="button button-first main-form-field-button" type="submit">
+                            </div>
+                            <div class="main-form-field">
+                                <p class="main-form__descr">
+                                    Наши менеджеры перезвонят вам в кратчайшие сроки
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="main-conditions">
+                        <div class="main-conditions-title">
+                            Если вы:
+                        </div>
+                        <div class="main-conditions-block">
+                            <ul>
+                                <li>
+                                    хотите получить высококачественный продукт, изготовленный с помощью новейших
+                                    технологий;
+                                </li>
+                                <li>
+                                    стремитесь придать помещению ухоженный вид;
+                                </li>
+                                <li>
+                                    беспокоитесь о своем здоровье и здоровье окружающих;
+                                </li>
+                                <li>
+                                    желаете оправдать свои ожидания.
+                                </li>
+                            </ul>
+                            <p class="main-conditions__descr">
+                                Компания REDVENT.RU готова работать с вами и для вас. Мы приветствуем частных
+                                и корпоративных заказчиков, рады смелым и интересным идеям, открыты для экспериментов
+                            </p>
+                            <a class="main main-conditions__link" href="/">Смотреть каталог вентилляционных решеток</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="clear:both;"></div>
+<footer>
+    <div class="footer-top"></div>
+    <div class="footer-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                    <div class="footer-menu">
+                        <ul class="footer-menu-list">
+                            <li class="footer-menu-list-item">
+                                <a class="footer-menu-list-item__link" href="catalog-sections.html">Каталог решеток</a>
+                            </li>
+                            <li class="footer-menu-list-item">
+                                <a class="footer-menu-list-item__link" href="production.html">Производство</a>
+                            </li>
+                            <li class="footer-menu-list-item">
+                                <a class="footer-menu-list-item__link" href="price.html">Цены online</a>
+                            </li>
+                            <li class="footer-menu-list-item">
+                                <a class="footer-menu-list-item__link" href="delivery.html">Оплата и Доставка</a>
+                            </li>
+                            <li class="footer-menu-list-item">
+                                <a class="footer-menu-list-item__link" href="actions.html">Наши акции</a>
+                            </li>
+                            <li class="footer-menu-list-item">
+                                <a class="footer-menu-list-item__link" href="contacts.html">Контактная информация</a>
+                            </li>
+                            <li class="footer-menu-list-item">
+                            </li>
+                        </ul>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div class="footer-copyright">
+                        Информация на сайте не является публичной афертой.<br>
+                        2015 Интернет-магазин вентиляционных решеток "Редвент.ру"
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <div class="footer-contacts">
+                        <div class="footer-contacts-field time">
+                            Работаем ежедневно<br>
+                            с 9.00 до 18.00
+                        </div>
+                        <div class="footer-contacts-field phone">
+                            <div class="footer-contacts-phone">
+                                8(495)795-23-04<br>
+                                <a class="footer-contacts-field__link" href="mailto:zakaz@redvent.ru">zakaz@redvent.ru</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>-->
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="plugins/bootstrap/js/bootstrap.js"></script>
+<script src="plugins/owl.carousel/owl.carousel.min.js"></script>
+<script src="plugins/lightbox/ekko-lightbox.min.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

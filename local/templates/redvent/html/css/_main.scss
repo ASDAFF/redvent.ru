@@ -1,0 +1,332 @@
+// get mixins and variables
+@import "mixins/mixins";
+@import "variables";
+
+.main {
+
+  &-nav {
+    width: 100%;
+    background: $color-second;
+    margin: 0 0 20px;
+    @include border-radius(3px);
+
+    &-list {
+
+      &-item {
+        padding: 15px 15px;
+        text-align: center;
+        display: inline-block;
+
+        @media screen {
+          
+          @media (max-width: 1200px) {
+            font-size: 14px;
+            padding: 15px 7px;
+          }
+        }
+
+        &__link {
+          @include link-style($color-font-second);
+        }
+      }
+    }
+  }
+
+  &-slider {
+    width: 100%;
+    margin: 0 0 30px;
+    position: relative;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 8px;
+      height: 280px;
+      background-position: center;
+      background-size: contain;
+      background-repeat: repeat-y;
+      z-index: 1;
+
+      top: 0;
+      right: 0;
+    }
+
+    &:before {
+      right: -1px;
+      background-image: url("#{$directory-image-base}slider-edge-right.png");
+    }
+
+    &:after {
+      left: -1px;
+      background-image: url("#{$directory-image-base}slider-edge-left.png");
+    }
+
+    &-item {
+      height: 280px;
+      padding: 25px 0 0 45px;
+      @include background-image-style-cover();
+
+      &__descr {
+        margin: 0 0 25px 0;
+      }
+
+      &__text {
+        font-size: 36px;
+        margin: 0;
+      }
+
+      &__link {
+        border: 2px solid $color-first;
+        padding: 5px 10px;
+        font-size: 16px;
+        @include border-radius(3px);
+        @include no-link-style($color-first);
+      }
+    }
+
+    .owl-dot {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      background: url('#{$directory-image-base}dot.png');
+      margin: 0 10px 0 0;
+      @include background-image-style();
+
+      &:hover,
+      &:active,
+      &.active {
+        background: url('#{$directory-image-base}dot-active.png');
+      }
+
+      &s {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        margin: -30px 0 0;
+      }
+    }
+  }
+
+  &-products {
+    margin: 0 0 25px;
+
+    &-tabs {
+      @include border-radius(3px);
+      background: $color-third;
+      display: inline-block;
+      margin: 0 0 30px;
+
+      &-item {
+        display: inline-block;
+
+        &.active {
+          @include border-radius(3px);
+          background: $color-first;
+          position: relative;
+
+          &:before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            margin: 0 0 0 -11px;
+            background-image: url( $directory-image-base + 'corner-tab-red.png' );
+            @include background-image-style();
+            width: 22px;
+            height: 10px;
+          }
+
+          .main-products-tabs-item__link {
+            color: $color-font-second;
+            @include link-style-invert($color-font-second)
+          }
+        }
+
+        &__link {
+          display: inline-block;
+          padding: 15px 20px;
+          color: $color-font-default;
+          text-decoration: none;
+          @include link-style($color-font-default)
+        }
+      }
+    }
+
+    &-items {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+
+      &-cont {
+        border-right: 1px solid $color-border-first;
+
+        @media screen {
+
+          @media (max-width: 767px) {
+            border: none;
+          }
+        }
+
+        &.last {
+          border: none;
+        }
+      }
+
+      &__item {
+        border: 1px solid $color-body-bg;
+        padding: 30px;
+
+        @media screen {
+
+          @media (max-width: 767px) {
+            padding: 10px 0;
+          }
+        }
+
+        &:hover,
+        &:active {
+          border: 1px solid $color-border-first;
+          box-shadow: inset 0 0 100px -33px  $color-border-first;
+          @include border-radius(3px)
+        }
+      }
+
+      &__img {
+        margin: 0 auto 20px;
+        max-height: 110px;
+
+        @media screen {
+
+          @media (max-width: 767px) {
+            max-height: 100px;
+          }
+
+          @media (min-width: 992px) and (max-width: 1199px) {
+            max-height: 78px;
+          }
+        }
+      }
+
+      &__link {
+        @include  link-style($color-font-link)
+      }
+    }
+  }
+
+  &-advantages {
+    margin: 0 0 30px;
+
+    &__title {
+      margin: 20px 0;
+    }
+
+    &-list {
+      margin: 0 0 30px;
+
+      &__text {
+        margin: 30px 0 0;
+      }
+    }
+  }
+
+  &-form {
+    background: $color-third;
+    padding: 5px 0 30px;
+    margin: 0 0 30px;
+    @include box-shadow(0px, 4px, 3px, -2px, $color-border-first);
+
+     &-title {
+       font-size: 16px;
+       position: relative;
+       text-transform: uppercase;
+
+       &.feedback {
+         padding: 35px 0 0 70px;
+
+         &:before {
+           content: '';
+           position: absolute;
+           bottom: 0;
+           left: 0;
+           background-image: url( $directory-image-base + 'main-form-phone.png' );
+           @include background-image-style();
+           width: 58px;
+           height: 63px;
+         }
+       }
+     }
+
+    &-field {
+      margin: 18px auto;
+      text-align: center;
+      width: 100%;
+      padding: 0 10%;
+
+      &-text {
+        text-align: left;
+        width: 100%;
+        padding: 5px 10px;
+        border: 1px solid $color-border-first;
+        background: $color-body-bg;
+        @include border-radius(3px);
+      }
+
+      &-button {
+        width: 100%;
+        margin: -2px 0 0;
+      }
+    }
+
+    &__descr {
+      text-align: left;
+    }
+  }
+
+  &-conditions {
+    width: 100%;
+    padding: 0 10% 30px;
+    margin: 0 0 30px;
+    border: 1px solid $color-border-first;
+    @include border-radius(3px);
+
+    &-title {
+      padding: 30px 0 15px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    &-list {
+      margin: 0 0 15px;
+      padding: 0;
+
+      &__item {
+        position: relative;
+        padding: 0 0 0 32px;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-image: url( $directory-image-base + 'check-red.png' );
+          @include background-image-style();
+          width: 18px;
+          height: 16px;
+        }
+      }
+    }
+
+    &__descr {
+      margin: 0 0 15px;
+    }
+
+    &__link {
+      font-weight: bold;
+      @include link-style($color-font-link);
+    }
+  }
+}

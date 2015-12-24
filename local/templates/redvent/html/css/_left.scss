@@ -1,0 +1,217 @@
+// get mixins and variables
+@import "mixins/mixins";
+@import "variables";
+
+.left {
+
+  &-menu {
+    margin: 0 0 20px;
+
+    &-top {
+      width: 100%;
+      position: relative;
+      background: $color-third;
+      @include border-top-radius(3px);
+
+      &-button {
+        background: $color-first;
+        @include border-top-radius(3px);
+
+      }
+
+      &__burger {
+        position: absolute;
+        top: 16px;
+        right: 15px;
+        width: 15px;
+        height: 16px;
+        background-image: url("#{$directory-image-base}burger.png");
+        @include background-image-style;
+      }
+
+      &__link {
+        display: block;
+        color: $color-font-second;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 15px 40px 15px 28px;
+        @include no-link-style($color-font-second);
+
+        //&:before {
+        //  content: '';
+        //  display: block;
+        //  position: absolute;
+        //  width: 18px;
+        //  height: 15px;
+        //  top: 15px;
+        //  right: 14px;
+        //  background-image: url( $directory-image-base + 'burger.png' );
+        //  @include background-image-style();
+        //}
+      }
+    }
+
+    &-bottom {
+      width: 100%;
+      background: $color-third;
+      @include border-bottom-radius(3px);
+
+      &-list {
+        padding: 28px;
+        list-style: none;
+
+        &-item {
+          margin: 0 0 5px;
+
+          &__link {
+            color: $color-font-default;
+            @include link-style($color-font-default);
+          }
+        }
+      }
+    }
+  }
+
+  &-slider {
+    margin: 0 0 20px;
+
+    @media screen {
+
+      @media (max-width: 991px) {
+        width: 270px;
+        max-width: 100%;
+        margin: 0 auto 20px;
+      }
+    }
+
+    &-top {
+      width: 100%;
+      font-weight: bold;
+      text-transform: uppercase;
+      border-top: 1px solid $color-border-first;
+      border-left: 1px solid $color-border-first;
+      border-right: 1px solid $color-border-first;
+      padding: 15px 40px 15px 28px;
+      @include border-top-radius(3px);
+    }
+
+    &-body {
+      width: 100%;
+    }
+
+    &-item {
+      width: 100%;
+      display: inline;
+      @include background-image-style-cover();
+
+      @media screen {
+
+        @media (max-width: 991px) {
+          width: auto;
+        }
+      }
+    }
+
+    &-bottom {
+      width: 100%;
+      border-bottom: 1px solid $color-border-first;
+      border-left: 1px solid $color-border-first;
+      border-right: 1px solid $color-border-first;
+      padding: 15px 40px 15px 28px;
+      @include border-top-radius(3px);
+
+      &__link {
+        text-transform: lowercase;
+        @include link-style-invert($color-font-default);
+        position: relative;
+
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 11px;
+          height: 16px;
+          top: 3px;
+          right: -16px;
+          background-image: url( $directory-image-base + 'corner-right.png' );
+          @include background-image-style();
+        }
+      }
+    }
+  }
+
+  &-reviews {
+    text-align: center;
+    margin: 0 0 30px;
+
+    &-title {
+      text-align: left;
+      padding: 15px 15px 15px 85px;
+      font-weight: bold;
+      position: relative;
+      display: inline-block;
+      margin: 0 auto;
+      text-transform: uppercase;
+      background: $color-body-bg;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 55px;
+        height: 55px;
+        top: 6px;
+        left: 15px;
+        background-image: url( $directory-image-base + 'reviews.png' );
+        @include background-image-style();
+      }
+    }
+
+    &-block {
+      width: 100%;
+      border: 1px solid $color-border-first;
+      padding: 40px 0 0;
+      margin: -33px 0 0;
+      @include border-radius(3px);
+
+      &-item {
+        margin-bottom: 30px;
+
+        &__img {
+          max-width: 80%;
+          margin: 0 auto;
+        }
+
+        &__name {
+          @include link-style-invert($color-font-default);
+        }
+      }
+    }
+
+    &-bottom {
+      width: 100%;
+      background: $color-third;
+      text-align: center;
+      padding: 10px 0;
+      margin: 15px 0 0;
+      @include border-bottom-radius(3px);
+
+      &__link {
+        @include link-style-invert($color-font-default);
+        position: relative;
+
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 11px;
+          height: 16px;
+          top: 3px;
+          right: -16px;
+          background-image: url( $directory-image-base + 'corner-right.png' );
+          @include background-image-style();
+        }
+      }
+    }
+  }
+}

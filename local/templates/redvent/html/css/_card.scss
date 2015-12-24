@@ -1,0 +1,185 @@
+// get mixins and variables
+@import "mixins/mixins";
+@import "variables";
+
+.card {
+
+  &-nav {
+    border-top: 1px solid $color-border-first;
+    border-bottom: 1px solid $color-border-first;
+    margin: 10px 0 20px;
+
+    &-list {
+      padding: 15px 0 5px;
+
+      &-item {
+        list-style: none;
+        float: left;
+        padding: 0 7px;
+        height: 32px;
+
+        &__link {
+          padding: 5px 12px 8px 12px;
+          background-color: $color-body-bg;
+          color: $color-font-link;
+          text-decoration: underline;
+          @include border-radius(5px);
+
+          &:visited,
+          &:focus {
+            color: $color-font-link;
+            text-decoration: underline;
+          }
+
+          &:hover,
+          &:active,
+          &.active {
+            background-color: $color-first;
+            color: $color-body-bg;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  &-top {
+
+    &-title {
+      float: left;
+      font-size: 18px;
+    }
+
+    &-clear {
+      float: right;
+      padding: 0 28px 0 0;
+      color: $color-first;
+      text-decoration: underline;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 3px;
+        right: 4px;
+        background-image: url('#{$directory-image-base}card-clear.png');
+        @include background-image-style;
+      }
+
+      &:visited,
+      &:focus {
+        color: $color-first;
+        text-decoration: underline;
+      }
+
+      &:hover,
+      &:active {
+        color: $color-first;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 0 20px;
+
+    &-row {
+
+      &.head {
+        background-color: $color-card-head;
+
+        .card-list-col {
+          border-bottom: none;
+        }
+      }
+    }
+
+    &-col {
+      border-right: 1px solid $color-card-border;
+      border-bottom: 1px solid $color-card-border;
+      padding: 10px;
+      font-size: 14px;
+      text-align: left;
+      vertical-align: top;
+
+      &:last-of-type {
+        border-right: none;
+      }
+
+      &__img {
+        max-width: 50px;
+        display: block;
+        height: auto;
+      }
+
+      &__clear {
+        display: block;
+        width: 14px;
+        height: 14px;
+        background-image: url("#{$directory-image-base}card-item-clear.png");
+        @include  background-image-style;
+      }
+
+      &-count {
+        background-color: $color-second;
+        overflow: hidden;
+        @include border-radius(3px);
+
+        &__minus,
+        &__plus {
+          background-color: $color-second;
+          color: $color-body-bg;
+          text-decoration: none;
+          float: left;
+          height: 24px;
+
+          &:visited,
+          &:focus,
+          &:hover,
+          &:active {
+            color: $color-body-bg;
+            text-decoration: none;
+          }
+        }
+
+        &__minus {
+          width: 23px;
+          padding: 3px 0 3px 9px;
+        }
+
+        &__plus {
+          width: 20px;
+          padding: 3px 0 3px 7px;
+        }
+
+        &__text {
+          width: 30px;
+          float: left;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  &-total {
+    text-align: right;
+
+    &-summ {
+      font-size: 18px;
+      margin: 0 0 20px;
+
+      &__price {
+        font-size: 26px;
+      }
+    }
+
+    &-button {
+      font-weight: normal;
+      padding: 7px 20px;
+    }
+  }
+}

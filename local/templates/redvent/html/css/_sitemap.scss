@@ -1,0 +1,71 @@
+// get mixins and variables
+@import "mixins/mixins";
+@import "variables";
+
+.sitemap {
+
+  a {
+    @include link-style($color-font-default);
+  }
+
+  &-first {
+    padding: 0 0 0 50px;
+
+    &-item {
+      position: relative;
+
+      &__link {
+        font-size: 20px;
+        font-weight: bold;
+        @include link-style-invert($color-font-default);
+        display: inline-block;
+        margin: 10px 0 10px;
+      }
+
+      &__button {
+        top: 15px;
+        left: -23px;
+        @include square(15px);
+      }
+    }
+  }
+
+  &-second {
+    padding: 0 0 0 20px;
+
+    &-item {
+      position: relative;
+
+      &__button {
+        top: 5px;
+        left: -23px;
+        @include square(12px);
+      }
+    }
+  }
+
+  &-third {
+    padding: 0 0 0 20px;
+    border-left: 1px solid $color-border-first;
+
+    &-item {
+      position: relative;
+
+      &__button {
+        top: 5px;
+        left: -23px;
+        @include square(12px);
+      }
+    }
+  }
+
+  &__button {
+    position: absolute;
+    background-image: url('#{$directory-image-base}minus.png');
+    @include background-image-style;
+
+    &.collapsed {
+      background-image: url('#{$directory-image-base}plus.png');
+    }
+  }
+}

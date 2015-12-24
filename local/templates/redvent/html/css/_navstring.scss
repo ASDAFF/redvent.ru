@@ -1,0 +1,27 @@
+// get mixins and variables
+@import "mixins/mixins";
+@import "variables";
+
+.navstring {
+  margin: -10px 0 60px;
+
+  &-item {
+    padding: 0 20px 0 0;
+    float: left;
+    color: $color-font-disabled;
+
+    &__link {
+      position: relative;
+      @include link-style($color-font-default);
+
+      &:before {
+        content: '/';
+        color: $color-first;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: -14px;
+      }
+    }
+  }
+}
