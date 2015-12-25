@@ -3,7 +3,7 @@ $arUrlRewrite = array(
 	array(
 		"CONDITION" => "#^/catalog/#",
 		"RULE" => "",
-		"ID" => "bitrix:catalog",
+		"ID" => "redvent:catalog",
 		"PATH" => "/catalog/index.php",
 	),
 	array(

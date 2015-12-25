@@ -1,9 +1,8 @@
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
-$APPLICATION->SetTitle('Наши акции');
+$APPLICATION->SetTitle("Наши акции");
 $APPLICATION->SetPageProperty('PAGE_DESCRIPTION', 'изготовление и продажа <b>27видов</b> вентиляционных решеток');
 $APPLICATION->SetPageProperty('NO_TITLE', 'Y');
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php");?>
-<?$APPLICATION->IncludeComponent(
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php");?><?$APPLICATION->IncludeComponent(
 	"redvent:catalog",
 	"",
 	Array(
@@ -37,7 +36,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php
 		"DETAIL_BLOG_EMAIL_NOTIFY" => "Y",
 		"DETAIL_BLOG_URL" => "catalog_comments",
 		"DETAIL_BLOG_USE" => "Y",
-		"DETAIL_BRAND_PROP_CODE" => array("", "BRAND_REF", ""),
+		"DETAIL_BRAND_PROP_CODE" => array("","BRAND_REF",""),
 		"DETAIL_BRAND_USE" => "N",
 		"DETAIL_BROWSER_TITLE" => "-",
 		"DETAIL_CHECK_SECTION_ID_VARIABLE" => "N",
@@ -50,7 +49,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php
 		"DETAIL_META_KEYWORDS" => "-",
 		"DETAIL_OFFERS_FIELD_CODE" => array(0=>"NAME",1=>"",),
 		"DETAIL_OFFERS_PROPERTY_CODE" => array(0=>"ARTNUMBER",1=>"SIZES_SHOES",2=>"SIZES_CLOTHES",3=>"COLOR_REF",4=>"MORE_PHOTO",5=>"",),
-		"DETAIL_PROPERTY_CODE" => array("", "", "", "", ""),
+		"DETAIL_PROPERTY_CODE" => array("WEIGHT","DEPTH","WIDTH_PLUS","HEIGHT_PLUS",""),
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DETAIL_SET_VIEWED_IN_COMPONENT" => "N",
 		"DETAIL_SHOW_BASIS_PRICE" => "Y",
@@ -67,13 +66,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php
 		"ELEMENT_SORT_FIELD2" => "id",
 		"ELEMENT_SORT_ORDER" => "asc",
 		"ELEMENT_SORT_ORDER2" => "desc",
-		"FIELDS" => array("", ""),
-		"FILTER_FIELD_CODE" => array("", ""),
+		"FIELDS" => array("",""),
+		"FILTER_FIELD_CODE" => array("",""),
 		"FILTER_NAME" => "",
 		"FILTER_OFFERS_FIELD_CODE" => array(0=>"PREVIEW_PICTURE",1=>"DETAIL_PICTURE",2=>"",),
 		"FILTER_OFFERS_PROPERTY_CODE" => array(0=>"",1=>"",),
 		"FILTER_PRICE_CODE" => array("BASE"),
-		"FILTER_PROPERTY_CODE" => array("", ""),
+		"FILTER_PROPERTY_CODE" => array("",""),
 		"FILTER_VIEW_MODE" => "VERTICAL",
 		"FORUM_ID" => "1",
 		"HIDE_NOT_AVAILABLE" => "N",
@@ -92,7 +91,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php
 		"LIST_OFFERS_FIELD_CODE" => array(0=>"NAME",1=>"PREVIEW_PICTURE",2=>"DETAIL_PICTURE",3=>"",),
 		"LIST_OFFERS_LIMIT" => "0",
 		"LIST_OFFERS_PROPERTY_CODE" => array(0=>"SIZES_SHOES",1=>"SIZES_CLOTHES",2=>"COLOR_REF",3=>"MORE_PHOTO",4=>"ARTNUMBER",5=>"",),
-		"LIST_PROPERTY_CODE" => array("", "", "", "", ""),
+		"LIST_PROPERTY_CODE" => array("",""),
 		"MAIN_TITLE" => "Наличие на складах",
 		"MESSAGES_PER_PAGE" => "10",
 		"MESSAGE_404" => "",
@@ -139,13 +138,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php
 		"SECTION_TOP_DEPTH" => "1",
 		"SEF_FOLDER" => "/catalog/",
 		"SEF_MODE" => "Y",
-		"SEF_URL_TEMPLATES" => Array(
-			"compare" => "compare/",
-			"element" => "#SECTION_CODE#/#ELEMENT_CODE#/",
-			"section" => "#SECTION_CODE#/",
-			"sections" => "",
-			"smart_filter" => "#SECTION_CODE#/filter/#SMART_FILTER_PATH#/apply/"
-		),
+		"SEF_URL_TEMPLATES" => Array("compare"=>"compare/","element"=>"#SECTION_CODE#/#ELEMENT_CODE#/","section"=>"#SECTION_CODE#/","sections"=>"","smart_filter"=>"#SECTION_CODE#/filter/#SMART_FILTER_PATH#/apply/"),
 		"SET_LAST_MODIFIED" => "N",
 		"SET_STATUS_404" => "Y",
 		"SET_TITLE" => "Y",
@@ -166,7 +159,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php
 		"TEMPLATE_THEME" => "site",
 		"TOP_ADD_TO_BASKET_ACTION" => "ADD",
 		"URL_TEMPLATES_READ" => "",
-		"USER_FIELDS" => array("", ""),
+		"USER_FIELDS" => array("",""),
 		"USE_ALSO_BUY" => "Y",
 		"USE_BIG_DATA" => "Y",
 		"USE_CAPTCHA" => "Y",
@@ -184,5 +177,4 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php
 		"USE_STORE_PHONE" => "Y",
 		"USE_STORE_SCHEDULE" => "Y"
 	)
-);?>
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

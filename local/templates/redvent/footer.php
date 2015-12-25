@@ -57,5 +57,6 @@
 //$APPLICATION->AddHeadScript("/local/templates/redvent/html/js/main.min.js");
 ?>
 <script src="/local/templates/redvent/html/js/main.min.js"></script>
+<script src="/local/templates/redvent/html/js/calc.js"></script>
 </body>
 </html>
