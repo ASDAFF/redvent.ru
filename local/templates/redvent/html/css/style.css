@@ -482,6 +482,10 @@ img.centered {
   .calc-field {
     margin: 0 0 15px;
     position: relative; }
+    .calc-field .dropdown-menu {
+      width: 100%; }
+      .calc-field .dropdown-menu img {
+        width: 30%; }
     .calc-field__name {
       width: 40%;
       font-weight: normal;
@@ -2079,6 +2083,8 @@ img.centered {
   .card-total-button {
     font-weight: normal;
     padding: 7px 20px; }
+.card-block {
+  margin: 0 0 50px; }
 
 /* calc */
 /* calc */

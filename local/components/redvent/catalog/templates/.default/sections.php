@@ -117,4 +117,14 @@ if($arParams["SHOW_TOP_ELEMENTS"]!="N")
 );?><?
     unset($basketAction);
 }
-?>
+?><?$APPLICATION->IncludeComponent(
+    "bitrix:main.include",
+    "",
+    Array(
+        "AREA_FILE_SHOW" => "file",
+        "AREA_FILE_SUFFIX" => "inc",
+        "COMPONENT_TEMPLATE" => ".default",
+        "EDIT_TEMPLATE" => "",
+        "PATH" => "/include/sections.php"
+    )
+);?>

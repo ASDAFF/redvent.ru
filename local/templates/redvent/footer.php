@@ -58,5 +58,6 @@
 ?>
 <script src="/local/templates/redvent/html/js/main.min.js"></script>
 <script src="/local/templates/redvent/html/js/calc.js"></script>
+<script src="/local/templates/redvent/html/js/basket.js"></script>
 </body>
 </html>

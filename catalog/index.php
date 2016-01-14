@@ -1,5 +1,5 @@
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
-$APPLICATION->SetTitle("Наши акции");
+$APPLICATION->SetTitle("Каталог решеток");
 $APPLICATION->SetPageProperty('PAGE_DESCRIPTION', 'изготовление и продажа <b>27видов</b> вентиляционных решеток');
 $APPLICATION->SetPageProperty('NO_TITLE', 'Y');
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php");?><?$APPLICATION->IncludeComponent(

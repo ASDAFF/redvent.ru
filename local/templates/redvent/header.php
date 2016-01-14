@@ -11,13 +11,11 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
         <link rel="shortcut icon" type="image/x-icon" href="<?=SITE_DIR?>favicon.ico" />
 
         <?
-        // TODO: странно, не работает конструкция $APPLICATION->SetAdditionalCSS, нужно исправить
         $APPLICATION->SetAdditionalCSS("/local/templates/redvent/html/plugins/bootstrap/css/bootstrap.min.css");
         $APPLICATION->SetAdditionalCSS("/local/templates/redvent/html/plugins/bootstrap/css/bootstrap-theme.min.css");
         $APPLICATION->SetAdditionalCSS("/local/templates/redvent/html/plugins/owl.carousel/assets/owl.carousel.css");
         $APPLICATION->SetAdditionalCSS("/local/templates/redvent/html/plugins/lightbox/ekko-lightbox.min.css");
         $APPLICATION->SetAdditionalCSS("/local/templates/redvent/html/css/style.css");
-        // ercvtgbnhjmkcvtgbynujmik,lrfvtgbnhujmikrcvtbgynujmi
         ?>
         <?$APPLICATION->ShowHead();?>
         <title><?$APPLICATION->ShowTitle()?></title>
@@ -68,16 +66,16 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
                     <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-8 col-xs-6 col-xs-offset-0">
                         <div class="header-top-personal" data-feedback-content='popover'>
                             <?if(!$USER->IsAuthorized()) {?>
-                                <?$APPLICATION->IncludeComponent(
-                                    "redvent:auth",
-                                    "top.auth",
-                                    Array(
-                                        "FORGOT_PASSWORD_URL" => "/forgot/",
-                                        "PROFILE_URL" => "",
-                                        "REGISTER_URL" => "",
-                                        "SHOW_ERRORS" => "Y"
-                                    )
-                                );?>
+<!--                                --><?//$APPLICATION->IncludeComponent(
+//                                    "redvent:auth",
+//                                    "top.auth",
+//                                    Array(
+//                                        "FORGOT_PASSWORD_URL" => "/forgot/",
+//                                        "PROFILE_URL" => "",
+//                                        "REGISTER_URL" => "",
+//                                        "SHOW_ERRORS" => "Y"
+//                                    )
+//                                );?>
                                 <div class="header-top-personal-auth">
                                     <a class="header-top-personal-auth__link" href="#auth_register" data-toggle="modal" data-target="#auth_register">Вход и регистрация</a>
                                 </div>
@@ -111,46 +109,47 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
                                                             "SUCCESS_PAGE" => "",
                                                             "USER_PROPERTY" => array(),
                                                             "USER_PROPERTY_NAME" => "",
-                                                            "USE_BACKURL" => "Y"
+                                                            "USE_BACKURL" => "Y",
+                                                            "USE_CAPTCHA" => "N"
                                                         )
                                                     );?>
-                                                    <h3 class="header-top-personal-popup__title">Регистрация</h3>
-                                                    <form class="form" action="/">
-                                                        <div class="header-top-personal-popup__field">
-                                                            <label class="header-top-personal-popup__name">
-                                                                Как вас зовут?
-                                                            </label>
-                                                            <input class="header-top-personal-popup__text" type="text">
-                                                        </div>
-                                                        <div class="header-top-personal-popup__field">
-                                                            <label class="header-top-personal-popup__name">
-                                                                Moбильный телефон
-                                                            </label>
-                                                            <input class="header-top-personal-popup__text" type="text">
-                                                        </div>
-                                                        <div class="header-top-personal-popup__field">
-                                                            <label class="header-top-personal-popup__name">
-                                                                Электронная почта
-                                                            </label>
-                                                            <input class="header-top-personal-popup__text" type="text">
-                                                        </div>
-                                                        <div class="header-top-personal-popup__field">
-                                                            <label class="header-top-personal-popup__name">
-                                                                Пароль
-                                                            </label>
-                                                            <input class="header-top-personal-popup__text" type="text">
-                                                        </div>
-                                                        <div class="header-top-personal-popup__field">
-                                                            <label class="header-top-personal-popup__name">
-                                                                Пароль еще раз
-                                                            </label>
-                                                            <input class="header-top-personal-popup__text" type="text">
-                                                        </div>
-                                                        <div class="header-top-personal-popup__field">
-                                                            <input class="button button-first" type="submit" value="Зарегистрироваться">
-                                                            <a class="header-top-personal-popup__button" href="#auth_form" data-toggle="tab">Войти</a>
-                                                        </div>
-                                                    </form>
+<!--                                                    <h3 class="header-top-personal-popup__title">Регистрация</h3>-->
+<!--                                                    <form class="form" action="/">-->
+<!--                                                        <div class="header-top-personal-popup__field">-->
+<!--                                                            <label class="header-top-personal-popup__name">-->
+<!--                                                                Как вас зовут?-->
+<!--                                                            </label>-->
+<!--                                                            <input class="header-top-personal-popup__text" type="text">-->
+<!--                                                        </div>-->
+<!--                                                        <div class="header-top-personal-popup__field">-->
+<!--                                                            <label class="header-top-personal-popup__name">-->
+<!--                                                                Moбильный телефон-->
+<!--                                                            </label>-->
+<!--                                                            <input class="header-top-personal-popup__text" type="text">-->
+<!--                                                        </div>-->
+<!--                                                        <div class="header-top-personal-popup__field">-->
+<!--                                                            <label class="header-top-personal-popup__name">-->
+<!--                                                                Электронная почта-->
+<!--                                                            </label>-->
+<!--                                                            <input class="header-top-personal-popup__text" type="text">-->
+<!--                                                        </div>-->
+<!--                                                        <div class="header-top-personal-popup__field">-->
+<!--                                                            <label class="header-top-personal-popup__name">-->
+<!--                                                                Пароль-->
+<!--                                                            </label>-->
+<!--                                                            <input class="header-top-personal-popup__text" type="text">-->
+<!--                                                        </div>-->
+<!--                                                        <div class="header-top-personal-popup__field">-->
+<!--                                                            <label class="header-top-personal-popup__name">-->
+<!--                                                                Пароль еще раз-->
+<!--                                                            </label>-->
+<!--                                                            <input class="header-top-personal-popup__text" type="text">-->
+<!--                                                        </div>-->
+<!--                                                        <div class="header-top-personal-popup__field">-->
+<!--                                                            <input class="button button-first" type="submit" value="Зарегистрироваться">-->
+<!--                                                            <a class="header-top-personal-popup__button" href="#auth_form" data-toggle="tab">Войти</a>-->
+<!--                                                        </div>-->
+<!--                                                    </form>-->
                                                 </div>
                                             </div>
                                         </div>
@@ -158,13 +157,29 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
                                 </div>
                             <?} else {?>
                                 <div class="header-top-personal-auth">
-                                    <a class="" href="/profile/"><?=$USER->GetLogin()?></a>
+                                    <a class="" href="/personal/"><?=$USER->GetLogin()?></a>
+                                    /
+                                    <a class="" href="<?=$APPLICATION->GetCurPage()?>?logout=yes">Выйти</a>
                                 </div>
                             <?}?>
-                            <div class="header-top-personal-basket">
-                                <a class="header-top-personal-basket__link" href="card.html">Корзина</a>
-                                <a class="header-top-personal-basket__count" href="card.html">2</a>
-                            </div>
+                            <?$APPLICATION->IncludeComponent(
+                                "bitrix:sale.basket.basket.line",
+                                "redvent",
+                                Array(
+                                    "COMPONENT_TEMPLATE" => "redvent",
+                                    "PATH_TO_BASKET" => SITE_DIR."personal/card/",
+                                    "PATH_TO_PERSONAL" => SITE_DIR."personal/",
+                                    "PATH_TO_PROFILE" => SITE_DIR."personal/",
+                                    "PATH_TO_REGISTER" => SITE_DIR."login/",
+                                    "POSITION_FIXED" => "N",
+                                    "SHOW_AUTHOR" => "N",
+                                    "SHOW_EMPTY_VALUES" => "Y",
+                                    "SHOW_NUM_PRODUCTS" => "Y",
+                                    "SHOW_PERSONAL_LINK" => "N",
+                                    "SHOW_PRODUCTS" => "N",
+                                    "SHOW_TOTAL_PRICE" => "N"
+                                )
+                            );?>
                         </div>
                     </div>
                 </div>
@@ -219,7 +234,7 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
                 "HIDE_LINK_WHEN_NO_DETAIL" => "N",
                 "IBLOCK_ID" => "7",
                 "IBLOCK_TYPE" => "other",
-                "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+                "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
                 "INCLUDE_SUBSECTIONS" => "Y",
                 "MESSAGE_404" => "",
                 "NEWS_COUNT" => "20",

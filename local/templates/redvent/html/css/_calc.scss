@@ -69,6 +69,14 @@
     margin: 0 0 15px;
     position: relative;
 
+    .dropdown-menu {
+      width: 100%;
+
+      img {
+        width: 30%;
+      }
+    }
+
     &__name {
       width: 40%;
       font-weight: normal;

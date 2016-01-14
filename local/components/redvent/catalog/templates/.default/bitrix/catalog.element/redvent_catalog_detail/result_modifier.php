@@ -592,4 +592,21 @@ if ($arResult['MODULES']['currency'])
 		unset($currencyFormat, $currency, $currencyIterator);
 	}
 }
+
+$rsColors = CIBlockElement::GetList(
+	array(),
+	array(
+		'IBLOCK_ID' => 10
+	),
+	false,
+	false,
+	array(
+        'NAME',
+        'PREVIEW_PICTURE'
+    )
+);
+while($arColors = $rsColors->Fetch()) {
+    $arColors['PREVIEW_PICTURE'] = CFile::GetPath($arColors['PREVIEW_PICTURE']);
+	$arResult['COLORS'][] = $arColors;
+}
 ?>

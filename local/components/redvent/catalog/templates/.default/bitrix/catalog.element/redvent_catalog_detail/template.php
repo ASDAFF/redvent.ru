@@ -2,6 +2,8 @@
 
 $this->setFrameMode(true);
 
+//_show_array($arResult);
+
 $strTitle = (
 	isset($arResult["IPROPERTY_VALUES"]["ELEMENT_DETAIL_PICTURE_FILE_TITLE"]) && $arResult["IPROPERTY_VALUES"]["ELEMENT_DETAIL_PICTURE_FILE_TITLE"] != ''
 	? $arResult["IPROPERTY_VALUES"]["ELEMENT_DETAIL_PICTURE_FILE_TITLE"]
@@ -103,22 +105,31 @@ $arFirstPhoto = current($arResult['MORE_PHOTO']);
                     <input type="hidden" name="product_eight_clearance" class="js-field-height-clearance" value="<?=$arResult['PROPERTIES']['HEIGHT_PLUS']['VALUE'] ?>">
                     <div class="calc-field form-field">
                         <label class="calc-field__name form-field__name" for="prod-width">Ширина:</label>
-                        <input class="calc-field__val form-field__text js-calc-field js-field-width" type="text" id="prod-width" value="1000">
+                        <input class="calc-field__val form-field__text js-calc-field js-field-width" type="text" id="prod-width" name="width" value="1000">
                         <span>мм</span>
                     </div>
                     <div class="calc-field form-field">
                         <label class="calc-field__name form-field__name" for="prod-height">Высота:</label>
-                        <input class="calc-field__val form-field__text js-calc-field js-field-height" type="text" id="prod-height" value="1000">
+                        <input class="calc-field__val form-field__text js-calc-field js-field-height" type="text" id="prod-height" name="height" value="1000">
                         <span>мм</span>
                     </div>
                     <div class="calc-field form-field">
                         <span class="calc-field__name form-field__name color">Цвет:</span>
-                        <a class="calc__link color" href="/">выбрать из палитры</a>
-                        <input type="hidden" id="prod-color">
+                        <a class="calc__link color js-field-color" data-toggle="dropdown" href="">выбрать из палитры</a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                            <? foreach ($arResult['COLORS'] as $color) {?>
+                                <li>
+                                    <a class="js-field-color-val" data-value="<?=$color['NAME']?>" href="">
+                                        <img src="<?= $color['PREVIEW_PICTURE'] ?>" alt="<?=$color['NAME']?>">&nbsp;&nbsp;&nbsp;<?=$color['NAME']?>
+                                    </a>
+                                </li>
+                            <?}?>
+                        </ul>
+                        <input type="hidden" id="prod-color" name="color">
                     </div>
                     <div class="calc-field form-field">
                         <label class="calc-field__name form-field__name" for="prod-height">Количество:</label>
-                        <input class="calc-field__val form-field__text js-calc-field js-field-quantity" type="text" id="prod-quantity" value="1">
+                        <input class="calc-field__val form-field__text js-calc-field js-field-quantity" type="text" id="prod-quantity" name="quantity" value="1">
                         <span>шт.</span>
                     </div>
                 </div>
@@ -131,7 +142,7 @@ $arFirstPhoto = current($arResult['MORE_PHOTO']);
                     <div class="calc-field">
                         <span class="calc-price__name">Цена:</span>
                         <span class="calc-price__val js-field-price" id="prod-price"><?=$arResult['CATALOG_PRICE_1']?></span>
-                        <input type="hidden" id="prod-price-val">
+                        <input type="hidden" id="prod-price-val" name="price" value="<?=$arResult['CATALOG_PRICE_1']?>">
                         <div style="clear:both;"></div>
                     </div>
                     <div class="calc-field">
@@ -165,7 +176,7 @@ $arFirstPhoto = current($arResult['MORE_PHOTO']);
                 </div>
                 <div class="calc-block-bottom__field">
                     <span class="calc-block-bottom__name">Цвет изделия:</span>
-                    <span class="calc-block-bottom__val" id="prod-color-selected">Нет</span>
+                    <span class="calc-block-bottom__val js-field-color" id="prod-color-selected">Нет</span>
                     <div style="clear:both;"></div>
                 </div>
             </div>

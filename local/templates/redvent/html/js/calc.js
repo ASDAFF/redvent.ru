@@ -14,6 +14,7 @@
             priceBaseFieldName: '.js-field-price-base',
 
             priceFieldName: '.js-field-price',
+            priceValFieldName: '#prod-price-val',
             priceSaleFieldName: '.js-field-price-sale',
             priceOriginFieldName: '.js-field-price-origin',
 
@@ -28,6 +29,9 @@
 
             volumeBaseFieldName: '.js-field-volume-base',
             volumeFieldName: '.js-field-volume',
+
+            colorFieldName: '.js-field-color',
+            colorFieldVal: '.js-field-color-val'
         }, options);
 
         var calc = function(){
@@ -41,9 +45,6 @@
             var heightM = height / 1000;
 
             var square = heightM * widthM;
-
-
-
 
             var priceForOne = widthM * heightM * priceBase;
             var price = priceForOne * quantity;
@@ -62,6 +63,7 @@
             volume = (+volume.toFixed(2)) + ' куб. м';
 
             $(options.priceFieldName).length ? $(options.priceFieldName).text(price) : false;
+            $(options.priceValFieldName).length ? $(options.priceValFieldName).val(priceForOne) : false;
             $(options.priceSaleFieldName).length ? $(options.priceSaleFieldName).text(price) : false;
             $(options.priceOriginFieldName).length ? $(options.priceOriginFieldName).text(priceOrigin) : false;
 
@@ -71,25 +73,6 @@
             $(options.widthFullFieldName).length ? $(options.widthFullFieldName).text(widthFull) : false;
             $(options.heightFullFieldName).length ? $(options.heightFullFieldName).text(heightFull) : false;
 
-
-
-            //console.log($(options.priceFieldName));
-            //console.log($(options.priceSaleFieldName));
-            //console.log($(options.priceOriginFieldName));
-            //
-            //console.log(width);
-            //console.log(height);
-            //console.log(quantityField.val());
-            //console.log(priceForOne);
-            //console.log(price);
-            //console.log(priceOrigin);
-            //console.log(widthM);
-            //console.log(heightM);
-            //console.log(square);
-
-            console.log($(options.widthClearanceFieldName, options.form).val());
-            console.log(width);
-            console.log(widthFull);
         };
 
         return this.each(calc);
@@ -102,3 +85,23 @@ $('.js-calc-field').on(
         $(this).Calc();
     }
 );
+
+
+$('.js-field-color-val').click(function(e){
+    e.preventDefault();
+    var val = $(this).data().value;
+
+    $('.js-field-color-val').each(
+        function() {
+            $(this).removeClass('selected');
+        }
+    );
+
+    $(this).addClass('selected');
+
+    $('.js-field-color').each(
+        function() {
+            $(this).text(val);
+        }
+    )
+})
