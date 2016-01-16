@@ -92,6 +92,7 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
                                                             "FORGOT_PASSWORD_URL" => "/forgot/",
                                                             "PROFILE_URL" => "",
                                                             "REGISTER_URL" => "",
+                                                            "SET_TITLE" => "N",
                                                             "SHOW_ERRORS" => "Y"
                                                         )
                                                     );?>
@@ -104,7 +105,7 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
                                                             "AUTH" => "Y",
                                                             "COMPONENT_TEMPLATE" => ".default",
                                                             "REQUIRED_FIELDS" => array("EMAIL","PERSONAL_MOBILE"),
-                                                            "SET_TITLE" => "Y",
+                                                            "SET_TITLE" => "N",
                                                             "SHOW_FIELDS" => array("EMAIL","PERSONAL_MOBILE"),
                                                             "SUCCESS_PAGE" => "",
                                                             "USER_PROPERTY" => array(),
