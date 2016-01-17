@@ -2,7 +2,7 @@
 use Bitrix\Sale\DiscountCouponsManager;
 
 if (!empty($arResult["ERROR_MESSAGE"]))
-	ShowError($arReSsult["ERROR_MESSAGE"]);
+	ShowError($arResult["ERROR_MESSAGE"]);
 
 $bDelayColumn  = false;
 $bDeleteColumn = false;
@@ -104,7 +104,7 @@ if ($normalCount > 0):
                             <?}?>
                         </td>
                         <td class="card-list-col"><?=$arItem['PRICE_FORMATED']?></td>
-                        <td class="card-list-col" id="sum_<?=$arItem['ID']?>"><?=$arItem['SUM']?></td>
+                        <td class="card-list-col"><?=$arItem['SUM']?></td>
                         <td class="card-list-col">
                             <a class="card-list-col__clear" href="<?=str_replace("#ID#", $arItem["ID"], $arUrls["delete"])?>"></a>
                         </td>

@@ -60,7 +60,7 @@
             price = +price.toFixed(2);
             priceOrigin = +priceOrigin.toFixed(2);
             weight = (+weight.toFixed(1)) + ' кг';
-            volume = (+volume.toFixed(2)) + ' куб. м';
+            volume = (+volume.toFixed(2)) + ' м<sup>3</sup>';
 
             $(options.priceFieldName).length ? $(options.priceFieldName).text(price) : false;
             $(options.priceValFieldName).length ? $(options.priceValFieldName).val(priceForOne) : false;
@@ -68,7 +68,7 @@
             $(options.priceOriginFieldName).length ? $(options.priceOriginFieldName).text(priceOrigin) : false;
 
             $(options.weightFieldName).length ? $(options.weightFieldName).text(weight) : false;
-            $(options.volumeFieldName).length ? $(options.volumeFieldName).text(volume) : false;
+            $(options.volumeFieldName).length ? $(options.volumeFieldName).html(volume) : false;
 
             $(options.widthFullFieldName).length ? $(options.widthFullFieldName).text(widthFull) : false;
             $(options.heightFullFieldName).length ? $(options.heightFullFieldName).text(heightFull) : false;
@@ -90,29 +90,16 @@
             widthFieldName: '.js-field-width',
             heightFieldName: '.js-field-height',
             quantityFieldName: '.js-field-quantity',
-            priceBaseFieldName: '.js-field-price-base',
 
             priceFieldName: '.js-field-price',
             priceFullFieldName: '.js-field-price-full',
             priceBaseFieldName: '.js-field-price-base',
-            priceValFieldName: '#prod-price-val',
-            priceSaleFieldName: '.js-field-price-sale',
-            priceOriginFieldName: '.js-field-price-origin',
 
-            widthClearanceFieldName: '.js-field-width-clearance',
             widthFullFieldName: '.js-field-width-full',
-
-            heightClearanceFieldName: '.js-field-height-clearance',
             heightFullFieldName: '.js-field-height-full',
 
-            weightBaseFieldName: '.js-field-weight-base',
             weightFieldName: '.js-field-weight',
-
-            volumeBaseFieldName: '.js-field-volume-base',
-            volumeFieldName: '.js-field-volume',
-
-            colorFieldName: '.js-field-color',
-            colorFieldVal: '.js-field-color-val'
+            volumeFieldName: '.js-field-volume'
         }, options);
 
         var calc = function(){
@@ -145,39 +132,6 @@
                 }
 
             });
-
-            //
-            //var widthM = width / 1000;
-            //var heightM = height / 1000;
-            //
-            //var square = heightM * widthM;
-            //
-            //var priceForOne = widthM * heightM * priceBase;
-            //var price = priceForOne * quantity;
-            //var priceOrigin = price / 73 * 100;
-            //
-            //var widthFull = (+$(options.widthClearanceFieldName, options.form).val() + width) + ' мм';
-            //var heightFull = (+$(options.heightClearanceFieldName, options.form).val() + height) + ' мм';
-            //
-            //var weight = +$(options.weightBaseFieldName, options.form).val() * square;
-            //
-            //var volume = (+$(options.volumeBaseFieldName, options.form).val() / 1000) * square;
-            //
-            //price = +price.toFixed(2);
-            //priceOrigin = +priceOrigin.toFixed(2);
-            //weight = (+weight.toFixed(1)) + ' кг';
-            //volume = (+volume.toFixed(2)) + ' куб. м';
-
-            //$(options.priceFieldName).length ? $(options.priceFieldName).text(price) : false;
-            //$(options.priceValFieldName).length ? $(options.priceValFieldName).val(priceForOne) : false;
-            //$(options.priceSaleFieldName).length ? $(options.priceSaleFieldName).text(price) : false;
-            //$(options.priceOriginFieldName).length ? $(options.priceOriginFieldName).text(priceOrigin) : false;
-            //
-            //$(options.weightFieldName).length ? $(options.weightFieldName).text(weight) : false;
-            //$(options.volumeFieldName).length ? $(options.volumeFieldName).text(volume) : false;
-            //
-            //$(options.widthFullFieldName).length ? $(options.widthFullFieldName).text(widthFull) : false;
-            //$(options.heightFullFieldName).length ? $(options.heightFullFieldName).text(heightFull) : false;
 
         };
 

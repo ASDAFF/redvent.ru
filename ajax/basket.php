@@ -8,7 +8,7 @@ CModule::IncludeModule("sale");
 CModule::IncludeModule("iblock");
 
 
-_show_array($req);
+//_show_array($req);
 if (!empty($req['id']) && !empty($req['width']) && !empty($req['height']) && !empty($req['quantity']) && !empty($req['price'])) {
 
     $rsProd = CIBlockElement::GetById($req['id']);
@@ -54,7 +54,7 @@ if (!empty($req['id']) && !empty($req['width']) && !empty($req['height']) && !em
 
         $arFields["PROPS"] = $arProps;
 
-        _show_array($arFields);
+//        _show_array($arFields);
 
         $basketId = CSaleBasket::Add($arFields);
     }

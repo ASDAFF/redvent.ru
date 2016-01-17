@@ -6,7 +6,7 @@ use Bitrix\Main\Loader;
 use Bitrix\Highloadblock as HL;
 use Bitrix\Sale\DiscountCouponsManager;
 
-class CBitrixBasketComponent extends CBitrixComponent
+class CRedventBasketComponent extends CBitrixComponent
 {
 	public $arCustomSelectFields = array();
 	public $arIblockProps = array();
@@ -998,7 +998,7 @@ class CBitrixBasketComponent extends CBitrixComponent
 				$deleteTmp = ($arPost["DELETE_".$arItem["ID"]] == "Y") ? "Y" : "N";
 				$delayTmp = ($arPost["DELAY_".$arItem["ID"]] == "Y") ? "Y" : "N";
 
-				if ($arItem["CAN_BUY"] == "Y")
+				if (true)
 				{
 					$res = $this->checkQuantity($arItem, $quantityTmp);
 
@@ -1052,6 +1052,8 @@ class CBitrixBasketComponent extends CBitrixComponent
 	{
 		global $USER;
 		$arResult = array();
+
+        CSaleBasket::Update($arBasketItem["ID"], array('QUANTITY' => $desiredQuantity));
 
 		/** @var $productProvider IBXSaleProductProvider */
 		if ($productProvider = CSaleBasket::GetProductProvider($arBasketItem))

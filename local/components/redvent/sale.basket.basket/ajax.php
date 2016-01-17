@@ -15,8 +15,9 @@ if (isset($_REQUEST['site_id']) && is_string($_REQUEST['site_id']))
 
 require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
 
-if (!check_bitrix_sessid() || $_SERVER["REQUEST_METHOD"] != "POST")
-	return;
+if (!check_bitrix_sessid() || $_SERVER["REQUEST_METHOD"] != "POST") {
+    return;
+}
 
 if (!Loader::includeModule('sale') || !Loader::includeModule('catalog'))
 	return;
@@ -283,9 +284,9 @@ if (isset($_POST[$action_var]) && strlen($_POST[$action_var]) > 0)
 	{
 		// todo: extract duplicated code to function
 
-		CBitrixComponent::includeComponentClass("bitrix:sale.basket.basket");
+		CBitrixComponent::includeComponentClass("redvent:sale.basket.basket");
 
-		$basket = new CBitrixBasketComponent();
+		$basket = new CRedventBasketComponent();
 		$basket->onIncludeComponentLang();
 
 		$basket->weightKoef = htmlspecialcharsbx(COption::GetOptionString('sale', 'weight_koef', 1, SITE_ID));
@@ -315,6 +316,7 @@ if (isset($_POST[$action_var]) && strlen($_POST[$action_var]) > 0)
 
 $arRes["PARAMS"]["QUANTITY_FLOAT"] = (isset($_POST["quantity_float"]) && $_POST["quantity_float"] == "Y") ? "Y" : "N";
 
+//_show_array($arRes);
 $APPLICATION->RestartBuffer();
 header('Content-Type: application/json; charset='.LANG_CHARSET);
 echo CUtil::PhpToJSObject($arRes);

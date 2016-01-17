@@ -481,7 +481,6 @@ function updateBasketTable(basketItemId, res)
 				// if the quantity was set by user to 0 or was too much, we need to show corrected quantity value from ajax response
 				if (BX('QUANTITY_' + id))
 				{
-                    console.log(item.QUANTITY);
 					BX('QUANTITY_INPUT_' + id).value = item.QUANTITY;
 					BX('QUANTITY_INPUT_' + id).defaultValue = item.QUANTITY;
 
@@ -1004,16 +1003,14 @@ function recalcBasketAjax(params)
 		for (i = 1; delayedItems.rows.length > i; i++)
 			postData['DELAY_' + delayedItems.rows[i].id] = 'Y';
 	}
-	console.log(postData);
 
 	BX.ajax({
-		url: '/local/components/redvent/sale.basket.basket/ajax.php',
+		url: '/bitrix/components/bitrix/sale.basket.basket/ajax.php',
 		method: 'POST',
 		data: postData,
 		dataType: 'json',
 		onsuccess: function(result)
 		{
-			console.log(result);
 			BX.closeWait();
 			updateBasketTable(null, result);
 		}
